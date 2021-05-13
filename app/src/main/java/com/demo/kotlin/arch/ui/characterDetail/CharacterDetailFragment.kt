@@ -6,11 +6,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import com.demo.kotlin.arch.data.entities.Character
 import com.demo.kotlin.arch.databinding.CharacterDetailFragmentBinding
-import com.demo.kotlin.arch.entities.Character
 import com.demo.kotlin.arch.utils.Resource
 import com.demo.kotlin.arch.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,7 +23,7 @@ class CharacterDetailFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = CharacterDetailFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -36,7 +35,7 @@ class CharacterDetailFragment : Fragment() {
     }
 
     private fun setupObservers() {
-        viewModel.character.observe(viewLifecycleOwner, Observer {
+        viewModel.character.observe(viewLifecycleOwner,  {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
                     bindCharacter(it.data!!)

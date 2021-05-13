@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import com.demo.kotlin.arch.data.repository.CharacterRepository
-import com.demo.kotlin.arch.entities.Character
+import com.demo.kotlin.arch.data.entities.Character
 import com.demo.kotlin.arch.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

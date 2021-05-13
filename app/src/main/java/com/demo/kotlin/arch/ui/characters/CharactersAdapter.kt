@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.demo.kotlin.arch.databinding.ItemCharacterBinding
-import com.demo.kotlin.arch.entities.Character
+import com.demo.kotlin.arch.data.entities.Character
 
 class CharactersAdapter(private val listener: CharacterItemListener) :
     RecyclerView.Adapter<CharacterViewHolder>() {

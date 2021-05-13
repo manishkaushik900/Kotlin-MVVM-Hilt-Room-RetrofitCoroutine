@@ -1,4 +1,4 @@
-package com.demo.kotlin.arch.entities
+package com.demo.kotlin.arch.data.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

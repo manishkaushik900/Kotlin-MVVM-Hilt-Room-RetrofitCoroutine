@@ -1,7 +1,7 @@
 package com.demo.kotlin.arch.data.repository
 
 import com.demo.kotlin.arch.data.remote.CharacterRemoteDataSource
-import com.demo.kotlin.arch.local.CharacterDao
+import com.demo.kotlin.arch.data.local.CharacterDao
 import com.demo.kotlin.arch.utils.performGetOperation
 import javax.inject.Inject
 

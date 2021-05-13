@@ -1,9 +1,10 @@
-package com.demo.kotlin.arch.local
+package com.demo.kotlin.arch.data.local
+
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.demo.kotlin.arch.entities.Character
+import com.demo.kotlin.arch.data.entities.Character
 
 @Database(entities = arrayOf(Character::class), version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {

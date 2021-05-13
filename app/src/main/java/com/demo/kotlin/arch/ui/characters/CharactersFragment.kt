@@ -7,13 +7,10 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.demo.kotlin.arch.R
 import com.demo.kotlin.arch.databinding.CharacterFragmentBinding
-import com.demo.kotlin.arch.ui.characters.CharactersAdapter
-import com.demo.kotlin.arch.ui.characters.CharactersViewModel
 import com.demo.kotlin.arch.utils.Resource
 import com.demo.kotlin.arch.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,7 +25,7 @@ class CharactersFragment : Fragment(), CharactersAdapter.CharacterItemListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = CharacterFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -46,7 +43,7 @@ class CharactersFragment : Fragment(), CharactersAdapter.CharacterItemListener {
     }
 
     private fun setupObservers() {
-        viewModel.characters.observe(viewLifecycleOwner, Observer {
+        viewModel.characters.observe(viewLifecycleOwner, {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
                     binding.progressBar.visibility = View.GONE

@@ -3,8 +3,8 @@ package com.demo.kotlin.arch.di
 import android.content.Context
 import com.demo.kotlin.arch.data.remote.CharacterRemoteDataSource
 import com.demo.kotlin.arch.data.remote.CharacterService
-import com.demo.kotlin.arch.local.AppDatabase
-import com.demo.kotlin.arch.local.CharacterDao
+import com.demo.kotlin.arch.data.local.AppDatabase
+import com.demo.kotlin.arch.data.local.CharacterDao
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module

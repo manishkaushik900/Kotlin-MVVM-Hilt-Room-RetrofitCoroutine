@@ -1,11 +1,11 @@
-package com.demo.kotlin.arch.local
+package com.demo.kotlin.arch.data.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.demo.kotlin.arch.entities.Character
+import com.demo.kotlin.arch.data.entities.Character
 
 @Dao
 interface CharacterDao {
