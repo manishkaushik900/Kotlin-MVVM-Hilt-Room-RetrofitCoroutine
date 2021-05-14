@@ -1,18 +1,21 @@
 package com.demo.kotlin.arch.utils
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
 fun <T, A> performGetOperation(
-    databaseQuery: () -> LiveData<T>,
+    databaseQuery: () -> Flow<T>,
     networkCall: suspend () -> Resource<A>,
     saveCallResult: suspend (A) -> Unit
 ): LiveData<Resource<T>> =
     liveData(Dispatchers.IO) {
         emit(Resource.loading())
-        val source = databaseQuery.invoke().map { Resource.success(it) }
+        val source = databaseQuery.invoke().map { Resource.success(it) }.asLiveData()
         emitSource(source)
 
         val responseStatus = networkCall.invoke()

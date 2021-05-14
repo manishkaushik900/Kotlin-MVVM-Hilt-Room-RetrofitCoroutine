@@ -22,4 +22,5 @@ class CharacterRepository @Inject constructor(
         saveCallResult = {localDataSource.insertAll(it.results)}
     )
 
+
 }
